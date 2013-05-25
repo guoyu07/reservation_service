@@ -3,7 +3,9 @@
 require 'helper'
 
 class TestReservationSystem < Test::Unit::TestCase
+
   def test_henry
-    assert ReservationSystem.author
+    assert_equal "Henry Lee", ReservationSystem.author
   end
+
 end
