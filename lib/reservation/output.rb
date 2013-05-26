@@ -10,7 +10,7 @@ module Reservation
     end
 
     def add_hotel(hotel)
-      @hotels[hotel.name.to_sym] = hotel
+      @hotels[hotel.name.downcase.to_sym] = hotel
     end
 
     def init_price(hotel, price)

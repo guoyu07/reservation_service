@@ -11,7 +11,7 @@ module Reservation
     def self.calculate(input, output)
       hotels.each do |hotel_klass|
         hotel = hotel_klass.new
-        input.check_days.each_with_index do |index, check_day|
+        input.check_days.each_with_index do |check_day, index|
           price = hotel.price(input.current_type(index), check_day)
           hotel.calculate_price(price)
         end
@@ -22,7 +22,9 @@ module Reservation
     private
 
     def self.hotels
-      [ Lakewood, Bridgewood, Ridgewood ]
+      [ Hotels::Lakewood,
+        Hotels::Bridgewood,
+        Hotels::Ridgewood ]
     end
 
   end

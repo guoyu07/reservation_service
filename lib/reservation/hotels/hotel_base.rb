@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 
+require 'date'
+
 module Reservation
   module Hotels
     class HotelBase
@@ -37,7 +39,11 @@ module Reservation
       end
 
       def calculate_price(price)
-        self.total_price += price
+        if self.total_price.nil?
+          self.total_price = price
+        else
+          self.total_price += price
+        end
       end
 
     end

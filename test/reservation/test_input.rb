@@ -19,8 +19,9 @@ module Reservation
 
     def test_current_type
       assert_equal 'regular', @input.customer_type
-      @input.current_type(1)
-      assert_equal 'rewards', @input.customer_type
+      assert_equal 'regular', @input.current_type(0)
+
+      assert_equal 'rewards', @input.current_type(1)
     end
 
   end
