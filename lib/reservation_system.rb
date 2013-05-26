@@ -8,9 +8,8 @@ class ReservationSystem
 
     class << self
 
-      def reservate(customer_type, check_days)
-        input = Input.new(customer_type, check_days)
-        output = Output.new
+      def reservate(input)
+        output = Reservation::Output.new
         Reservation::Hotel.calculate(input, output)
         output.recommended_hotel
       end

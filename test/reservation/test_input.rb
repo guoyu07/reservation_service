@@ -6,22 +6,15 @@ module Reservation
   class TestInput < Test::Unit::TestCase
 
     def setup
-      customer_type = 'regular'
-      check_days = ['2013-05-26', '2013-05-27']
-      @input = Input.new(customer_type, check_days)
+      @line = 'Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)'
+      @input_type = 'textfile'
     end
 
-    def test_default_type
-      assert_equal Input::CUSTOMER_TYPES.first, @input.default_type(nil)
-      assert_equal Input::CUSTOMER_TYPES.first, @input.default_type("regular")
-      assert_equal Input::CUSTOMER_TYPES.last, @input.default_type("rewards")
-    end
-
-    def test_current_type
-      assert_equal 'regular', @input.customer_type
-      assert_equal 'regular', @input.current_type(0)
-
-      assert_equal 'rewards', @input.current_type(1)
+    def test_kclass
+      textfile =  Input.kclass(@input_type).new(@line)
+      assert textfile
+      assert_equal 'rewards', textfile.customer_type
+      assert_equal 3, textfile.check_days.size
     end
 
   end
