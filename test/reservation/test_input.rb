@@ -6,8 +6,9 @@ module Reservation
   class TestInput < Test::Unit::TestCase
 
     def setup
-      options = {}
-      @input = Input.new(options)
+      customer_type = 'regular'
+      check_days = ['2013-05-26', '2013-05-27']
+      @input = Input.new(customer_type, check_days)
     end
 
     def test_default_type

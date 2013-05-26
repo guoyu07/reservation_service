@@ -9,13 +9,8 @@ module Reservation
       @hotels = {}
     end
 
-    def add_hotel(hotel, price)
-      hotel_name = hotel.name.to_sym
-      if @hotels.has_key?(hotel_name)
-        calculate_price(hotel_name, price)
-      else
-        init_price(hotel, price)
-      end
+    def add_hotel(hotel)
+      @hotels[hotel.name.to_sym] = hotel
     end
 
     def init_price(hotel, price)

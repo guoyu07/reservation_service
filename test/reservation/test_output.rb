@@ -8,13 +8,10 @@ module Reservation
     def setup
       @sample_hotels = { lakewood: { name: 'lakewood',
                                      rating: 3,
-                                     price: 100
-                         },
+                                     price: 100 },
                          bridgewood: { name: 'bridgewood',
                                        rating: 4,
-                                       price: 200
-                         }
-                       }
+                                       price: 200 } }
       @output = Output.new
     end
 
