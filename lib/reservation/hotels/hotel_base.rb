@@ -37,7 +37,7 @@ module Reservation
       end
 
       def calculate_price(price)
-        total_price += price
+        self.total_price += price
       end
 
     end

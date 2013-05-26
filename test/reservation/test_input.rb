@@ -17,5 +17,11 @@ module Reservation
       assert_equal Input::CUSTOMER_TYPES.last, @input.default_type("rewards")
     end
 
+    def test_current_type
+      assert_equal 'regular', @input.customer_type
+      @input.current_type(1)
+      assert_equal 'rewards', @input.customer_type
+    end
+
   end
 end
