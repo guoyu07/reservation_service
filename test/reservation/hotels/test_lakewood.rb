@@ -7,11 +7,8 @@ module Reservation
     class TestLakewood < Test::Unit::TestCase
 
       def setup
-        # Sunday
-        @weekend = '2013-05-26'
-        # Monday
-        @weekday = '2013-05-27'
-
+        @weekend = '2013-05-26' # Sunday
+        @weekday = '2013-05-27' # Monday
         @hotel = Lakewood.new
       end
 

@@ -8,6 +8,10 @@ it will recommends you a cheapest but highest rating hotel.
 The input data should be the following format:
     <customer_type>: <date1>, <date2>, <date3>, ...
 
+== System Design
+The system design diagram is located in [doc/system_design.png].
+{doc/system_design.png}
+
 == Usage
 The Reservation System can be tested via the following two rake tasks.
 
@@ -15,7 +19,7 @@ The Reservation System can be tested via the following two rake tasks.
     rake hotel:reservate_textfile
 
 This task is desinged to supply input data via text file.
-Currently, it will read from a text file, located in doc/sample.txt.
+Currently, it will read from a text file, located in [doc/sample.txt].
 Each line will act as one input.
 Your can change the testing date in the sample file, save it and then
 run the task.
