@@ -1,6 +1,110 @@
 = reservation_system
 
-Description goes here.
+== Description
+This is a hotel reservation system.
+After you input your data, includes <customer_type> and check-in <date>,
+it will recommends you a cheapest but highest rating hotel.
+
+The input data should be the following format:
+    <customer_type>: <date1>, <date2>, <date3>, ...
+
+== Usage
+The Reservation System can be tested via the following two rake tasks.
+
+* Hotel Reservation input from textfile
+    rake hotel:reservate_textfile
+
+This task is desinged to supply input data via text file.
+Currently, it will read from a text file, located in doc/sample.txt.
+Each line will act as one input.
+Your can change the testing date in the sample file, save it and then
+run the task.
+
+Check out the default results.
+
+    $ rake hotel:reservate_textfile
+    START reservate_textfile
+
+    INPUT 1:
+    Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
+    OUTPUT 1
+    Lakewood
+
+    INPUT 2:
+    Regular: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)
+    OUTPUT 2
+    Bridgewood
+
+    INPUT 3:
+    Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
+    OUTPUT 3
+    Ridgewood
+
+    END reservate_textfile
+
+* Hotel Reservation input from terminal
+    rake hotel:reservate_terminal
+
+This task's coding is a little complicated.
+But the logic is as simple as the former task:
+First, read the customer_type;
+Second, read the check-in dates.
+
+The following results is tested by myself.
+
+  $ rake hotel:reservate_terminal
+  START reservate_terminal (use Ctrl + c to quit)
+
+  Input customer_type Regular or Rewards (Press Enter for default Regular): 
+  > [Enter]
+
+  Input check-in date (multiple dates please separate with ','):
+  The following date format is accepted: 2013-05-27,16Mar2009(mon)
+  > 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
+
+  INPUT 1:
+  Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
+  OUTPUT 1
+  Lakewood 
+
+  Input customer_type Regular or Rewards (Press Enter for default Regular):
+  > regular
+  Input check-in date (multiple dates please separate with ','):
+  The following date format is accepted: 2013-05-27,16Mar2009(mon)
+  > 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)
+
+  INPUT 2:
+  Regular: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)
+  OUTPUT 2
+  Bridgewood 
+
+  Input customer_type Regular or Rewards (Press Enter for default Regular):
+  > Rewards
+  Input check-in date (multiple dates please separate with ','):
+  The following date format is accepted: 2013-05-27,16Mar2009(mon)
+  > 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
+
+  INPUT 3:
+  Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
+  OUTPUT 3
+  Ridgewood 
+
+  Input customer_type Regular or Rewards (Press Enter for default Regular):
+  > [Enter]
+  Input check-in date (multiple dates please separate with ','):
+  The following date format is accepted: 2013-05-27,16Mar2009(mon)
+  > [Enter]
+  Please input check-in date:
+  26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
+
+  INPUT 4:
+  Regular: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
+  OUTPUT 4
+  Lakewood 
+
+  Input customer_type Regular or Rewards (Press Enter for default Regular):
+  > [Ctrl + c]
+
 
 == Contributing to reservation_system
  
