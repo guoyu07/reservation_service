@@ -10,7 +10,7 @@ The input data should be the following format:
 
 == System Design
 The system design diagram is located in [doc/system_design.png].
-{doc/system_design.png}
+{<img src="https://github.com/manageyp/reservation_system/blob/master/doc/system_design.png" />}[https://github.com/manageyp/reservation_system/blob/master/doc/system_design.png]]
 
 == Usage
 The Reservation System can be tested via the following two rake tasks.
