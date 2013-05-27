@@ -6,12 +6,12 @@ module Reservation
 
       CUSTOMER_TYPES = ['regular', 'rewards']
 
-      def regular?(type)
-        'regular' == type
-      end
+      CUSTOMER_TYPES.each do |type|
 
-      def rewards?(type)
-        'rewards' == type
+        define_method("#{type}?") do |str|
+          type == str
+        end
+
       end
 
     end

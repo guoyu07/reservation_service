@@ -21,7 +21,7 @@ module Reservation
 
       def current_type(day_index)
         if day_index >= 1
-          CUSTOMER_TYPES.last
+          CUSTOMER_TYPES[1]
         else
           self.customer_type
         end
