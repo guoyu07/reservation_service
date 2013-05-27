@@ -15,7 +15,7 @@ module Reservation
 
     def test_recommended_hotel
       assert_equal 3, @output.hotels.size
-      assert_equal 'Bridgewood', @output.recommended_hotel
+      assert_equal 'Bridgewood', @output.recommended_hotel.name
     end
 
   end

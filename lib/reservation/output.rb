@@ -19,7 +19,7 @@ module Reservation
         cheapest = sorted_hotels.first
         recommends = sorted_hotels.select{ |x| x.total_price <= cheapest.total_price }
         recommended = recommends.sort { |x, y| x.rating <=> y.rating }
-        recommended.last.name
+        recommended.last
       end
     end
 

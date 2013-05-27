@@ -9,7 +9,7 @@ class TestReservationSystem < Test::Unit::TestCase
     input_type = 'textfile'
     textfile = Reservation::Input.kclass(input_type).new(line)
     hotel = ReservationSystem.reservate(textfile)
-    assert_equal 'Lakewood', hotel
+    assert_equal 'Lakewood', hotel.name
   end
 
   def test_author

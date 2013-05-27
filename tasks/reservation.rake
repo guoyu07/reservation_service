@@ -17,7 +17,7 @@ namespace :hotel do
         hotel = ReservationSystem.reservate(textfile)
 
         puts "OUTPUT #{line_no}"
-        puts hotel
+        puts hotel.name
       else
         puts "INVALIDE INPUTS : line number #{line_no}"
       end
