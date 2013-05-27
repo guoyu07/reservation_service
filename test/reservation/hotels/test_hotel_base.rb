@@ -8,12 +8,9 @@ module Reservation
 
       def setup
         @customer_type = 'regular'
-        # Sunday
-        @weekend = '2013-05-26'
-        # Monday
-        @weekday = '2013-05-27'
+        @weekend = '2013-05-26' # Sunday
+        @weekday = '2013-05-27' # Monday
         @price = 100
-
         @base_hotel = HotelBase.new
       end
 

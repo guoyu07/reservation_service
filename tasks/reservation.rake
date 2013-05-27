@@ -50,9 +50,10 @@ namespace :hotel do
       end
 
       puts "\nINPUT #{line_no}:"
-      puts "#{customer_type.capitalize}: #{check_days}"
+      line = "#{customer_type.capitalize}: #{check_days}"
+      puts line
       begin
-        terminal = Reservation::Input.kclass('terminal').new(customer_type, check_days.split(','))
+        terminal = Reservation::Input.kclass('terminal').new(line)
         hotel = ReservationSystem.reservate(terminal)
 
         puts "OUTPUT #{line_no}"

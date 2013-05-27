@@ -9,6 +9,7 @@ module Reservation
       def setup
         customer_type = 'regular'
         check_days = ['2013-05-26', '2013-05-27']
+        @line = 'Rewards: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)'
         @input = InputBase.new(customer_type, check_days)
       end
 
@@ -23,6 +24,12 @@ module Reservation
         assert_equal 'regular', @input.current_type(0)
 
         assert_equal 'rewards', @input.current_type(1)
+      end
+
+      def test_parse_line
+        customer_type, check_days = @input.parse_line(@line)
+        assert_equal 'rewards', customer_type
+        assert_equal 3, check_days.size
       end
 
     end
